@@ -6,8 +6,7 @@ import PhotoList from '@/components/clients/photo-list';
 const ThirdComponent = () => {
   const [isPending, startTransition] = useTransition();
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchDataFromServer = async () => {
@@ -25,13 +24,12 @@ const ThirdComponent = () => {
     fetchDataFromServer();
   }, []);
 
-  // Render JSX based on state
   return (
     <div>
       <h1>Third Component</h1>
-      <form action={fetchData}>
+      {/* <form action={fetchData}>
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
       {isPending && <p>Loading...</p>}
       {!isPending && data && <PhotoList photos={data} />}
     </div>

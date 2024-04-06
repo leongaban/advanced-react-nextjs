@@ -2,7 +2,7 @@ import React from 'react';
 
 const PhotoList = ({ photos }: any) => {
   return (
-    <div>
+    <div className="photo-container">
       {photos.map(photo => (
         <div key={photo.id}>
           <h2>{photo.title}</h2>
